@@ -1,0 +1,107 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismissActiveModal('Cross Click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form #itemForm="ngForm">
+        <div class="form-group">
+            <input class="form-control" type="text" name="id" [(ngModel)]="item.id" [hidden]="true">
+
+            <div class="form-group">
+                <label class="col-form-label">Name</label>
+                <input class="form-control" type="text" id="itemName" name="name"
+                 #name="ngModel" required [(ngModel)]="item.name">
+
+                <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required">
+                        Item Name is required!
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Item Price</label>
+                <input class="form-control" type="number" id="price" name="price"
+                #price="ngModel" required [(ngModel)]="item.price"  pattern="[0-9.]*">
+
+                <div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+                    <div *ngIf="price.errors.required">
+                        Item Price is Required
+                    </div>
+                    <div *ngIf="price.errors.pattern">
+                        Item Price should be in numbers.
+                    </div>
+                </div>
+            </div>   
+            
+            <div class="form-group">
+                <label class="col-form-label">Category</label>
+                <input class="form-control" type="text" id="type" name="type"
+                 #type="ngModel" required [(ngModel)]="item.type">
+
+                <div class="alert alert-danger" *ngIf="type.invalid && (type.dirty || type.touched)">
+                    <div *ngIf="type.errors.required">
+                        Item type is required!
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Rental Price</label>
+                <input class="form-control" type="number" id="rentalPrice" name="rentalPrice"
+                 #rentalPrice="ngModel" required [(ngModel)]="item.rentalPrice">
+
+                <div class="alert alert-danger" *ngIf="rentalPrice.invalid && (rentalPrice.dirty || rentalPrice.touched)">
+                    <div *ngIf="rentalPrice.errors.required">
+                        Item rentalPrice is required!
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Available Quantity</label>
+                <input class="form-control" type="number" id="availableQuantity" name="availableQuantity"
+                 #availableQuantity="ngModel" required [(ngModel)]="item.availableQuantity">
+
+                <div class="alert alert-danger" *ngIf="availableQuantity.invalid && (availableQuantity.dirty || availableQuantity.touched)">
+                    <div *ngIf="availableQuantity.errors.required">
+                        Item availableQuantity is required!
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Restock Quantity</label>
+                <input class="form-control" type="number" id="restockQuantity" name="restockQuantity"
+                 #restockQuantity="ngModel" required [(ngModel)]="item.restockQuantity">
+
+                <div class="alert alert-danger" *ngIf="restockQuantity.invalid && (restockQuantity.dirty || restockQuantity.touched)">
+                    <div *ngIf="restockQuantity.errors.required">
+                        Item restockQuantity is required!
+                    </div>
+                </div>
+            </div>      
+            
+            <div class="form-group">
+                <label class="col-form-label">Restock Date</label>
+                <input class="form-control" type="Date" id="restockDate" name="restockDate"
+                 #restockDate="ngModel" required [(ngModel)]="item.restockDate">
+
+                <div class="alert alert-danger" *ngIf="restockDate.invalid && (restockDate.dirty || restockDate.touched)">
+                    <div *ngIf="restockDate.errors.required">
+                        Item restockDate is required!
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="saveItem(item)" [disabled]="itemForm.invalid">
+        <span class="fa fa-floppy-o" aria-hidden="true"></span> {{btnText}}</button>
+    <button type="button" class="btn btn-default" (click)="dismissActiveModal('Cancel Click')">
+        <span class="fa fa-times" aria-hidden="true"></span> Cancel</button>
+</div>

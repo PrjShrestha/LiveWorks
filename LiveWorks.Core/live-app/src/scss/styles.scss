@@ -1,0 +1,23 @@
+/* Show it is fixed to the top */
+body {
+    padding-top: 3.7rem;
+    background-color: rgb(233,234,237);
+  }
+  
+  .heading {
+    //background-color: #E3F2FD;
+  }
+  
+  /*
+   * Footer
+   */
+  .footer {
+    padding: 2.5rem 0;
+    text-align: center;
+    background-color: #CFD8DC;
+    border-top: .05rem solid #CFD8DC;
+  }
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+  

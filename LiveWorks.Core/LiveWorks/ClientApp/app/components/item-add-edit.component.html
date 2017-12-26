@@ -1,0 +1,90 @@
+<!--<div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismissActiveModal('Cross Click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form #itemForm="ngForm">
+        <div class="form-group">
+            <input class="form-control" type="text" name="id" [(ngModel)]="item.id" [hidden]="true">
+            <div class="form-group">
+                <label class="col-form-label">Name</label>
+                <input class="form-control" type="text" id="itemName" name="name"
+                 #name="ngModel" required [(ngModel)]="item.name">
+
+                <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required">
+                        item Name is required!
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="example-text-input" class="col-form-label">Type</label>
+                <select class="custom-select form-control" id="selectitemType" [(ngModel)]="item.type"
+                 name="type" [disabled]="!addMode">
+                    <option *ngFor="let item of types()" [ngValue]="type[item]">
+                        {{item}}
+                    </option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label class="col-form-label">item Version</label>
+                <input class="form-control" type="text" id="textitemVersion" 
+                required [(ngModel)]="item.version" name="version" #version="ngModel" pattern="[0-9.]*">
+
+                <div class="alert alert-danger" *ngIf="version.invalid && (version.dirty || version.touched)">
+                    <div *ngIf="version.errors.required">
+                        item Version is required!
+                    </div>
+                    <div *ngIf="version.errors.pattern">
+                        item Version should be in numbers.
+                    </div>
+                </div>
+            </div>
+
+            <label class="col-form-label">Version</label>
+            <div *ngIf="!addMode || item.type !== type.StandardCore">
+                <select class="custom-select form-control" id="selectitemType" 
+                required [(ngModel)]="item.price" name="price"
+                    [disabled]="!addMode || item.type === type.StandardCore">
+                    <option *ngFor="let value of versions" [ngValue]="value">
+                        {{value}}
+                    </option>
+                </select>
+            </div>
+            <div *ngIf="addMode && item.type === type.Guitar">
+                <input class="form-control" type="text" value="" id="price" #price="ngModel"
+                 required [(ngModel)]="item.price" name="price" pattern="[0-9.]*">
+
+
+                <div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+                    <div *ngIf="price.errors.required">
+                        Is required!
+                    </div>
+                    <div *ngIf="price.errors.pattern">
+                        Based On Standard Version should be in numbers.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="example-text-input" class="col-form-label">Price</label>
+                <select class="custom-select form-control" id="selectitemType" [(ngModel)]="item.Price"
+                 name="Price" >             
+                    <option *ngFor="let item of Prices()"  [ngValue]="Price[item]">
+                        {{item}}
+                    </option>
+                </select>
+
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="saveModel(item)" [disabled]="itemForm.invalid">
+        <span class="fa fa-floppy-o" aria-hidden="true"></span> {{btnText}}</button>
+    <button type="button" class="btn btn-default" (click)="dismissActiveModal('Cancel Click')">
+        <span class="fa fa-times" aria-hidden="true"></span> Cancel</button>
+</div>-->

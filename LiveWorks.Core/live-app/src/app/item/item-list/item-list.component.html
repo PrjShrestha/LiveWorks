@@ -1,0 +1,101 @@
+﻿<div class="container-fluid controller">
+    <div class="row">
+        <div class="col-6">
+            <div class="input-group search">
+                <input type="text" class ="form-control search-field" [(ngModel)]="name" placeholder="Search For..." aria-label="Search for..."/>
+                <span class="input-group-btn">
+                    <button class="bth btn btn-secondary" type="button"><i class="icon-search"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="col-6">
+            <ul class="pagination float-right">
+                <nav aria-label="Page navigation example">
+                    <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+                </nav>
+            </ul>
+            <ul class="nav float-right">
+                <li class="nav-item">
+                    <a class="nav-link-control" (click)="openAddEditItem()">
+                        <i class="icon-add rounded-circle text-center float-left shadow-md"></i>
+                        <span class="float-left">Add New Item</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+    <strong>{{ errorMessage }}</strong>
+    <button type="button" (click)="dismissError()"
+            class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead bgcolor="#1420bf" >
+            <tr>
+                <th (click)="sort('id')" bgcolor="#1420bf">
+                        ID
+                        <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th (click)="sort('name')" bgcolor="#1420bf">
+                    Item Name
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th (click)="sort('rentalPrice')">
+                    RentalPrice
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th (click)="sort('type')">
+                    Category
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th (click)="sort('dimension')">
+                    Dimensions
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <!-- <th (click)="sort('availableQuantity')">
+                    AvailableQuantity
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th (click)="sort('restockQuantity')">
+                    RestockQuantity
+                    <i class="icon-sort-desc float-right"></i>
+                </th>
+                <th>
+                    RestockDate
+                    <i class="icon-sort-desc float-right"></i>
+                </th> -->
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items | orderBy: key : reverse | filter:name | paginate: { itemsPerPage: 5, currentPage: pageNumber }; let i = index;">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.rentalPrice}}</td>
+                <td>{{item.type}} </td>
+                <td>{{item.dimensions}}</td>
+                <!-- <td>{{item.availableQuantity}}</td>
+                <td>{{item.restockQuantity}}</td>
+                <td>{{item.restockDate}}</td> -->
+                <td class="actions">
+                    <a (click)="openAddEditItem(item)" class="edit"><i class="icon-pencil"></i></a>
+                    <a (click)="deleteItem(item)" class="delete"><i class="icon-bin"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination float-right">
+                    <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

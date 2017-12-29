@@ -1,7 +1,7 @@
 ﻿import { Component, Inject, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Item } from '../../EntityDto/item';
-import { ItemService } from '../itemService';
+import { ItemService } from '../item.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ItemAddEditComponent } from '../item-add-edit/item-add-edit.component';
@@ -37,6 +37,33 @@ export class ItemListComponent implements OnInit {
             }
 
         );
+
+        this.items = [
+            {
+                id: 1, name: 'Amp', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'
+            },
+            {
+                id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'  
+            },
+            {
+                id: 1, name: 'Zoom', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'
+            },
+            {
+                id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'
+            },
+            {
+                id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'
+            },
+            {
+                id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
+                dimension: '5x2'
+            }
+        ]
 
         console.log(this.items);
     }
@@ -116,32 +143,6 @@ export class ItemListComponent implements OnInit {
 }
 
 
-
-            // this.items = [
-        //     {
-        //         id: 1, name: 'Amp', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 3
-        //     },
-        //     {id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 4
-        //     },
-        //     {
-        //         id: 1, name: 'Zoom', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 3
-        //     },
-        //     {
-        //         id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 2
-        //     },
-        //     {
-        //         id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 3
-        //     },
-        //     {
-        //         id: 1, name: 'Guitar', price: 2, type: 'music', rentalPrice: 4, description: 'desc',
-        //         dimension: '5x2', supplier: 'Ktm', availableQuantity: 5, restockDate: new Date(), restockQuantity: 3
-        //     }
-        // ]
 
 
     // constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {

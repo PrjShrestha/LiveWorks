@@ -6,10 +6,6 @@ export class Item {
     public rentalPrice: number;
     public description: string;
     public dimension: string;
-    public supplier: string;
-    public availableQuantity: number;
-    public restockDate: Date;
-    public restockQuantity: number;
 
     // constructor(id: number,
     //     name: string,

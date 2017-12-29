@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {NgModel, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { NgbActiveModal, ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { ItemService } from '../itemService';
+import { ItemService } from '../item.service';
 import { Item } from '../../EntityDto/item';
 
 @Component({

@@ -14,12 +14,18 @@ import { HomeComponent } from './home/home.component';
 import { FetchDataComponent } from './fetchdata/fetchdata.component';
 import { CounterComponent } from './counter/counter.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
-import { ItemService } from './item/itemService';
+import { ItemService } from './item/item.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ItemAddEditComponent } from './item/item-add-edit/item-add-edit.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryAddEditComponent } from './category/category-add-edit/category-add-edit.component';
 import { CategoryService } from './category/categoryService';
+import { AddEditStockInComponent } from './stockIn/add-edit-stock-in/add-edit-stock-in.component';
+import { StockInListComponent } from './stockIn/stock-in-list/stock-in-list.component';
+import { StockOutListComponent } from './stockOut/stock-out-list/stock-out-list.component';
+import { AddEditStockOutComponent } from './stockOut/add-edit-stock-out/add-edit-stock-out.component';
+import { StockListComponent } from './stock/stock-list/stock-list.component';
+import { AddEditStockComponent } from './stock/add-edit-stock/add-edit-stock.component';
 
 
 @NgModule({
@@ -33,6 +39,12 @@ import { CategoryService } from './category/categoryService';
     ItemAddEditComponent,
     CategoryListComponent,
     CategoryAddEditComponent,
+    AddEditStockInComponent,
+    StockInListComponent,
+    StockOutListComponent,
+    AddEditStockOutComponent,
+    StockListComponent,
+    AddEditStockComponent,
   ],
   imports: [
     BrowserModule,

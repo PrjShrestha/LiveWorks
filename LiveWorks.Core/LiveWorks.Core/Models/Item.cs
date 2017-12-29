@@ -19,12 +19,5 @@ namespace LiveWorks.Core.Models
         public double RentalPrice { get; set; }
         public string Description { get; set; }
         public string Dimensions { get; set; }
-        public string Supplier { get; set; }
-        [Required]
-        public int AvailableQuantity { get; set; }
-        [Required]
-        public DateTime RestockDate { get; set; }
-        [Required]
-        public int RestockQuantity { get; set; }
     }
 }

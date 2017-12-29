@@ -13,6 +13,7 @@ namespace LiveWorks.Core.Context
         { }
 
         public DbSet<Client> Clients { get; set; }
+
         public DbSet<Item> Items { get; set; }
 
         public DbSet<Order> Orders { get; set; }
@@ -26,6 +27,12 @@ namespace LiveWorks.Core.Context
         public DbSet<Bill> Bills { get; set; }
 
         public DbSet<Item> BillOrders { get; set; }
+
+        public DbSet<Stock> Stocks { get; set; }
+
+        public DbSet<StockIn> StockIn { get; set; }
+
+        public DbSet<StockOut> StockOut { get; set; }
 
         //public DbSet<Category> Categories { get; set; }
 

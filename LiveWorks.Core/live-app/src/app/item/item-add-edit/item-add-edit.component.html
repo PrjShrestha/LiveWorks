@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label class="col-form-label">Name</label>
                 <input class="form-control" type="text" id="itemName" name="name"
-                 #name="ngModel" required [(ngModel)]="item.name">
+                 #name="ngModel" required [(ngModel)]="item.name" placeholder="Name">
 
                 <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
                     <div *ngIf="name.errors.required">
@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label class="col-form-label">Item Price</label>
                 <input class="form-control" type="number" id="price" name="price"
-                #price="ngModel" required [(ngModel)]="item.price"  pattern="[0-9.]*">
+                #price="ngModel" required [(ngModel)]="item.price"  pattern="[0-9.]*" placeholder="500.35">
 
                 <div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
                     <div *ngIf="price.errors.required">
@@ -39,7 +39,7 @@
             <div class="form-group">
                 <label class="col-form-label">Category</label>
                 <input class="form-control" type="text" id="type" name="type"
-                 #type="ngModel" required [(ngModel)]="item.type">
+                 #type="ngModel" required [(ngModel)]="item.type" placeholder="Lights">
 
                 <div class="alert alert-danger" *ngIf="type.invalid && (type.dirty || type.touched)">
                     <div *ngIf="type.errors.required">
@@ -51,16 +51,52 @@
             <div class="form-group">
                 <label class="col-form-label">Rental Price</label>
                 <input class="form-control" type="number" id="rentalPrice" name="rentalPrice"
-                 #rentalPrice="ngModel" required [(ngModel)]="item.rentalPrice">
+                 #rentalPrice="ngModel" required [(ngModel)]="item.rentalPrice" pattern="[0-9.]*" placeholder="600.25">
 
                 <div class="alert alert-danger" *ngIf="rentalPrice.invalid && (rentalPrice.dirty || rentalPrice.touched)">
                     <div *ngIf="rentalPrice.errors.required">
-                        Item rentalPrice is required!
+                        Item Rental Price is required!
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
+                <label class="col-form-label">dimension</label>
+                <input class="form-control" type="text" id="itemdimension" name="dimension"
+                 #dimension="ngModel" [(ngModel)]="item.dimension" placeholder="15x30">
+
+                <!-- <div class="alert alert-danger" *ngIf="dimension.invalid && (dimension.dirty || dimension.touched)">
+                    <div *ngIf="dimension.errors.required">
+                        Item dimension is required!
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- <div class="form-group">
+                <label class="col-form-label">supplier</label>
+                <input class="form-control" type="text" id="itemsupplier" name="supplier"
+                 #supplier="ngModel" required [(ngModel)]="item.supplier" placeholder="supplier">
+                <!-- <div class="alert alert-danger" *ngIf="supplier.invalid && (supplier.dirty || supplier.touched)">
+                    <div *ngIf="supplier.errors.required">
+                        Item supplier is required!
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="form-group">
+                <label class="col-form-label">Description</label>
+                <textarea class="form-control" rows="3" id="itemdescription" name="description"
+                #description="ngModel" required [(ngModel)]="item.description" placeholder="This is a Type of light"></textarea>
+                <!-- <input class="form-control input-lg" type="text" id="itemdescription" name="description"
+                 #description="ngModel" required [(ngModel)]="item.description" placeholder="This is a Type of light"> -->
+
+                <div class="alert alert-danger" *ngIf="description.invalid && (description.dirty || description.touched)">
+                    <div *ngIf="description.errors.required">
+                        Item description is required!
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="form-group">
                 <label class="col-form-label">Available Quantity</label>
                 <input class="form-control" type="number" id="availableQuantity" name="availableQuantity"
                  #availableQuantity="ngModel" required [(ngModel)]="item.availableQuantity">
@@ -94,7 +130,7 @@
                         Item restockDate is required!
                     </div>
                 </div>
-            </div>
+            </div> -->
            
         </div>
     </form>

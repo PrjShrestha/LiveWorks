@@ -14,7 +14,7 @@ namespace LiveWorks.EntityDto
         [Required]
         public double Price { get; set; }
         [Required]
-        public string Type { get; set; }
+        public string TypeDto { get; set; }
         [Required]
         public double RentalPrice { get; set; }
 

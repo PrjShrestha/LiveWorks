@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { OrderModule } from 'ngx-order-pipe';
+//import { OrderModule } from 'ngx-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -32,7 +32,7 @@ import { ItemListComponent } from './components/item-list/item-list.component';
         FormsModule,
         NgxPaginationModule,
         Ng2SearchPipeModule,
-        OrderModule,
+        //OrderModule,
         NgbModule.forRoot(),
 
         RouterModule.forRoot([

@@ -19,6 +19,9 @@ namespace LiveWorks.Core.UniOfWork
         public ItemSetRepository ItemSetRepository { get; private set; }
         public OrderItemRepository OrderItemRepository { get; private set; }
         public OrderRepository OrderRepository { get; private set; }
+        public StockInRepository StockInRepository { get; private set; }
+        public StockOutRepository StockOutRepository { get; private set; }
+        public StockRepository StockRepository { get; private set; }
         //public CategoryRepository CategoryRepository { get; private set; }
 
         public InventoryUnitOfWork(InventoryContext context)
@@ -32,6 +35,9 @@ namespace LiveWorks.Core.UniOfWork
             ItemSetRepository = new ItemSetRepository(_context);
             OrderItemRepository = new OrderItemRepository(_context);
             OrderItemRepository = new OrderItemRepository(_context);
+            StockInRepository = new StockInRepository(_context);
+            StockOutRepository = new StockOutRepository(_context);
+            StockRepository = new StockRepository(_context);
             //CategoryRepository = new CategoryRepository(_context);
         }
 

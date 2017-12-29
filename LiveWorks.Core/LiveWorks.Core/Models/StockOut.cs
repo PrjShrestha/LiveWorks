@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LiveWorks.Core.Models
 {
@@ -7,16 +8,16 @@ namespace LiveWorks.Core.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public int OutDate { get; set; }
+        public DateTime DealDate { get; set; }
         [Required]
         public virtual Item Item { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]
-        public string PersonWhoGave { get; set; }
+        public string Dealer { get; set; }
         [Required]
-        public virtual Client ClientRentedTo { get; set; }
-        [Required]
+        public string Client { get; set; }
+
         public string Remarks { get; set; }
     }
 }

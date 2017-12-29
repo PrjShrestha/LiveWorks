@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using LiveWorks.Core.Models;
 using LiveWorks.Core.UniOfWork;
@@ -25,11 +26,11 @@ namespace LiveWorksWeb.Controllers
         [HttpGet]
         public virtual IActionResult Get()
         {
-            try
+            try                
             {
                 var entities = _unitOfWork.ItemRepository.GetAll();
-
-                return Ok(entities);
+                var ItemDtoEntities = Mapper.Map<IEnumerable<Item>, IEnumerable<ItemDto>>(entities);
+                return Ok(ItemDtoEntities);
             }
             catch (Exception ex)
             {
